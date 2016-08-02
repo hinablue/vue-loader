@@ -67,7 +67,11 @@ After proper installation, your `package.json`'s `devDependencies` field should 
 
 ### Configuring Webpack
 
+<<<<<<< HEAD
 Here's a basic Webpack configuration for `vue-loader`:
+=======
+Here's the most basic Webpack configuration for `vue-loader`:
+>>>>>>> Translate all documents to Chinese. (#295)
 
 ``` js
 // webpack.config.js
@@ -86,6 +90,7 @@ module.exports = {
       {
         test: /\.vue$/, // a regex for matching all files that end in `.vue`
         loader: 'vue'   // loader to use for matched files
+<<<<<<< HEAD
       },
       {
         // use babel-loader for *.js files
@@ -99,6 +104,10 @@ module.exports = {
   },
   babel: {
     presets: ['es2015']
+=======
+      }
+    ]
+>>>>>>> Translate all documents to Chinese. (#295)
   }
 }
 ```
@@ -152,6 +161,7 @@ module.exports = {
 </script>
 ```
 
+<<<<<<< HEAD
 Now create a couple of basic sub-components.
 
 `./components/ComponentA.vue`
@@ -168,10 +178,13 @@ Now create a couple of basic sub-components.
 </template>
 ```
 
+=======
+>>>>>>> Translate all documents to Chinese. (#295)
 Next, let's create an `index.html` that simply uses the bundled file:
 
 ``` html
 <!-- index.html -->
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
   <head>
@@ -183,6 +196,12 @@ Next, let's create an `index.html` that simply uses the bundled file:
     <script src="build.js"></script>
   </body>
 </html>
+=======
+<body>
+  <app></app>
+  <script src="build.js"></script>
+</body>
+>>>>>>> Translate all documents to Chinese. (#295)
 ```
 
 ### Running It
