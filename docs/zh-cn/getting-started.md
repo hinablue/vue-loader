@@ -68,10 +68,14 @@ After proper installation, your `package.json`'s `devDependencies` field should 
 ### Configuring Webpack
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Here's a basic Webpack configuration for `vue-loader`:
 =======
 Here's the most basic Webpack configuration for `vue-loader`:
 >>>>>>> Translate all documents to Chinese. (#295)
+=======
+Here's a basic Webpack configuration for `vue-loader`:
+>>>>>>> Update tutorial.md (#313)
 
 ``` js
 // webpack.config.js
@@ -91,6 +95,9 @@ module.exports = {
         test: /\.vue$/, // a regex for matching all files that end in `.vue`
         loader: 'vue'   // loader to use for matched files
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update tutorial.md (#313)
       },
       {
         // use babel-loader for *.js files
@@ -100,6 +107,7 @@ module.exports = {
         // otherwise it's going to be really slow!
         exclude: /node_modules/
       }      
+<<<<<<< HEAD
     ]
   },
   babel: {
@@ -108,6 +116,12 @@ module.exports = {
       }
     ]
 >>>>>>> Translate all documents to Chinese. (#295)
+=======
+    ]
+  },
+  babel: {
+    presets: ['es2015']
+>>>>>>> Update tutorial.md (#313)
   }
 }
 ```
@@ -162,6 +176,9 @@ module.exports = {
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update tutorial.md (#313)
 Now create a couple of basic sub-components.
 
 `./components/ComponentA.vue`
@@ -178,13 +195,19 @@ Now create a couple of basic sub-components.
 </template>
 ```
 
+<<<<<<< HEAD
 =======
 >>>>>>> Translate all documents to Chinese. (#295)
+=======
+>>>>>>> Update tutorial.md (#313)
 Next, let's create an `index.html` that simply uses the bundled file:
 
 ``` html
 <!-- index.html -->
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Update tutorial.md (#313)
 <!DOCTYPE html>
 <html>
   <head>
@@ -196,12 +219,15 @@ Next, let's create an `index.html` that simply uses the bundled file:
     <script src="build.js"></script>
   </body>
 </html>
+<<<<<<< HEAD
 =======
 <body>
   <app></app>
   <script src="build.js"></script>
 </body>
 >>>>>>> Translate all documents to Chinese. (#295)
+=======
+>>>>>>> Update tutorial.md (#313)
 ```
 
 ### Running It
