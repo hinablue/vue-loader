@@ -37,7 +37,7 @@ npm install\
 npm install vue --save
 ```
 
-That's a lot of dependencies, I know! This is mostly because `vue-loader` needs to have other webpack loaders as **peer dependencies** rather than nested dependencies so that Webpack can find them.[^(1)]
+That's a lot of dependencies, I know! This is mostly because `vue-loader` need to have other webpack loaders as **peer dependencies** rather than nested dependencies so that Webpack can find them.[^(1)]
 
 > Note: In previous versions of `vue-loader` we used to explicitly install `babel-runtime` 5.x to avoid duplicate dependencies - this is no longer necessary after recent babel upgrade.
 
@@ -46,28 +46,28 @@ After proper installation, your `package.json`'s `devDependencies` field should 
 ``` json
 ...
   "devDependencies": {
-    "babel-core": "^6.13.2",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-runtime": "^6.12.0",
-    "babel-preset-es2015": "^6.13.2",
-    "babel-runtime": "^5.8.38",
-    "css-loader": "^0.23.1",
-    "vue-hot-reload-api": "^1.3.3",
-    "vue-html-loader": "^1.2.3",
-    "vue-loader": "^7.5.3",
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-runtime": "^5.8.34",
+    "css-loader": "^0.23.0",
+    "vue-hot-reload-api": "^1.2.2",
+    "vue-html-loader": "^1.0.0",
     "vue-style-loader": "^1.0.0",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "vue-loader": "^7.2.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
-    "vue": "^1.0.26"
-  }
+    "vue": "^1.0.13"
+  },
 ...
 ```
 
 ### Configuring Webpack
 
-Here's a basic Webpack configuration for `vue-loader`:
+Here's the most basic Webpack configuration for `vue-loader`:
 
 ``` js
 // webpack.config.js
@@ -86,19 +86,8 @@ module.exports = {
       {
         test: /\.vue$/, // a regex for matching all files that end in `.vue`
         loader: 'vue'   // loader to use for matched files
-      },
-      {
-        // use babel-loader for *.js files
-        test: /\.js$/,
-        loader: 'babel',
-        // important: exclude files in node_modules
-        // otherwise it's going to be really slow!
-        exclude: /node_modules/
-      }      
+      }
     ]
-  },
-  babel: {
-    presets: ['es2015']
   }
 }
 ```
@@ -119,7 +108,7 @@ The app entry point, `main.js` typically looks like this (using ES2015 syntax):
 // main.js
 import Vue from 'vue'
 // require a *.vue component
-import App from './components/App.vue'
+import App from './components/App'
 
 // mount a root Vue instance
 new Vue({
@@ -155,37 +144,14 @@ export default {
 </script>
 ```
 
-Now create a couple of basic sub-components.
-
-`./components/ComponentA.vue`
-``` html
-<template>
-  <div>Component A</div>
-</template>
-```
-
-`./components/ComponentB.vue`
-``` html
-<template>
-  <div>Component B</div>
-</template>
-```
-
 Next, let's create an `index.html` that simply uses the bundled file:
 
 ``` html
 <!-- index.html -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Vue.js Tutorial</title>
-  </head>
-  <body>
-    <app></app>
-    <script src="build.js"></script>
-  </body>
-</html>
+<body>
+  <app></app>
+  <script src="build.js"></script>
+</body>
 ```
 
 ### Running It
